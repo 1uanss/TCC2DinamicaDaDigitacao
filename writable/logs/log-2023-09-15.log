@@ -1,0 +1,56 @@
+ERROR - 2023-09-15 23:17:25 --> Undefined array key "nome"
+CRITICAL - 2023-09-15 23:17:25 --> Class "App\Controllers\ResponseInterface" not found
+in APPPATH\Controllers\Home.php on line 48.
+ 1 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->salvarValor()
+ 2 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-09-15 23:17:25 --> Undefined array key "nome"
+CRITICAL - 2023-09-15 23:17:25 --> Class "App\Controllers\ResponseInterface" not found
+in APPPATH\Controllers\Home.php on line 48.
+ 1 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->salvarValor()
+ 2 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-09-15 23:17:26 --> Undefined array key "nome"
+CRITICAL - 2023-09-15 23:17:26 --> Class "App\Controllers\ResponseInterface" not found
+in APPPATH\Controllers\Home.php on line 48.
+ 1 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->salvarValor()
+ 2 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-09-15 23:17:27 --> Undefined array key "nome"
+CRITICAL - 2023-09-15 23:17:27 --> Class "App\Controllers\ResponseInterface" not found
+in APPPATH\Controllers\Home.php on line 48.
+ 1 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->salvarValor()
+ 2 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-09-15 23:18:28 --> Undefined array key "nome"
+CRITICAL - 2023-09-15 23:18:28 --> Class "App\Controllers\ResponseInterface" not found
+in APPPATH\Controllers\Home.php on line 48.
+ 1 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->salvarValor()
+ 2 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-09-15 23:18:28 --> Undefined array key "nome"
+CRITICAL - 2023-09-15 23:18:28 --> Class "App\Controllers\ResponseInterface" not found
+in APPPATH\Controllers\Home.php on line 48.
+ 1 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->salvarValor()
+ 2 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-09-15 23:18:28 --> Undefined array key "nome"
+CRITICAL - 2023-09-15 23:18:28 --> Class "App\Controllers\ResponseInterface" not found
+in APPPATH\Controllers\Home.php on line 48.
+ 1 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->salvarValor()
+ 2 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-09-15 23:18:29 --> Undefined array key "nome"
+CRITICAL - 2023-09-15 23:18:29 --> Class "App\Controllers\ResponseInterface" not found
+in APPPATH\Controllers\Home.php on line 48.
+ 1 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Home->salvarValor()
+ 2 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
