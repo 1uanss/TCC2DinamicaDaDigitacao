@@ -29,7 +29,7 @@
     </header>
         <p class="informacao">
             Bem vindo a fase 1 do projeto sobre a dinamica da digitação, ao digitar seu nome e senha trinta vezes
-            voçê estara ajudando no treinamento de uma RNA " rede neural artificial".
+            voçê estara ajudando no treinamento de uma RNA " rede neural artificial", por gentileza digite a mesma senha do seu cadastro.
         </p>
         <div class="form-box">
             <div class="form-value">

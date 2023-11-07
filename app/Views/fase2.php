@@ -27,9 +27,9 @@
             </ul>
         </nav>
     </header>
-        <p class="informacao">
-            Bem vindo a fase 2 do projeto sobre a dinamica da digitação, ao digitar seu nome e senha trinta vezes
-            voçê estara ajudando no treinamento de uma RNA " rede neural artificial".
+        <p class="informacao">Bem-vindo à Fase 2 do projeto sobre a dinâmica da digitação. Nesta fase, você contribuirá seguindo os passos a seguir:
+        Tente acessar o seu próprio login duas vezes.
+        Além disso, tente acessar o login de outros usuários duas vezes.
         </p>
         <div class="form-box">
             <div class="form-value">
