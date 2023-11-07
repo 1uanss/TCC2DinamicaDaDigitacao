@@ -1,99 +1,47 @@
 <?php
 
-
 namespace App\Controllers;
 
-use CodeIgniter\Controller;
+use App\Models\SenhaModel;
 use CodeIgniter\API\ResponseTrait;
-use App\Models\ValorModel; // Importe o modelo
 
 class Home extends BaseController
 {
     use ResponseTrait;
 
-    public function index(): string
+    public function index()
     {
+        
         return view('index');
     }
 
-    public function salvarValor() 
+    public function savePasswordAttempt()
     {
-        // Obtenha os dados do corpo da solicitação
-        $input = $this->request->getJSON(true);
+        $request = service('request');
+        $requestData = $request->getJSON(); // Obtenha os dados JSON da requisição
 
-        try {
-            // Carregue o modelo ValorModel
-            $valorModel = new ValorModel();
+        // Verifique se os campos necessários estão definidos
+        if (isset($requestData->nome_usuario) && isset($requestData->senha)) {
+            $model = new SenhaModel();
 
-            // Inserir os valores recebidos no banco de dados
-            $data = [
-                'nome' => $input['nome'],
-                'tempos_tecla' => $input['tempos_tecla'],
-                'tempos' => json_encode($input['tempos']),
-            ];
-            $valorModel->insert($data);
+            if ($model->countAttempts() < 30) {
+                $nomeUsuario = $requestData->nome_usuario; // Obtenha o nome do usuário
+                $senha = $requestData->senha;
 
-            // Verificar se a inserção foi bem-sucedida e enviar uma resposta ao frontend
-            if ($valorModel->affectedRows() > 0) {
-                return $this->respond(['mensagem' => 'Valores salvos com sucesso!'], 200);
+                // Salve a tentativa de senha associada ao nome do usuário
+                $model->addTentativaSenha($nomeUsuario, $senha);
+
+                return $this->respond(['message' => 'Tentativa de senha registrada com sucesso']);
             } else {
-                return $this->respond(['error' => 'Erro ao salvar os valores.'], 500);
+                return $this->respond(['message' => 'Limite de tentativas atingido']);
             }
-        } catch (\Exception $e) {
-            log_message('error', $e->getMessage());
-            return $this->respond(['error' => 'Erro ao salvar os valores.'], 500);
+        } else {
+            return $this->respond(['message' => 'Campos ausentes na requisição']);
         }
     }
 }
 
-// namespace App\Controllers;
 
-// class Home extends BaseController
-// {
-//     public function index(): string
-//     {
-//         return view('index');
-//     }
 
-//     public function salvarValor() 
-//     {
-        // Obtenha os dados do corpo da solicitação
-        // $input = $this->request->getJSON(true);
 
-        // Configurar as informações de conexão com o banco de dados
-        // $connectionConfig = [
-        //     'hostname' => 'localhost',
-        //     'username' => 'root',
-        //     'password' => '',
-        //     'database' => 'tcc',
-        // ];
-
-        // try {
-            // Criar uma conexão com o banco de dados
-            // $db = \Config\Database::connect($connectionConfig);
-
-            // Inserir os valores recebidos no banco de dados
-            // $data = [
-            //     'nome' => $input['nome'],
-            //     'tempos_tecla' => $input['tempos_tecla'],
-            //     'tempos' => json_encode( $input['tempos']),
-            //     // 'diferencas' => json_encode($input['diferencas']), // Converta em JSON para armazenamento
-            // ];
-            // $db->table('valores')->insert($data);
-
-            // Verificar se a inserção foi bem-sucedida e enviar uma resposta ao frontend
-//             if ($db->affectedRows() > 0) {
-//                 return $this->response->setStatusCode(ResponseInterface::HTTP_OK)
-//                                      ->setJSON(['mensagem' => 'Valores salvos com sucesso!']);
-//             } else {
-//                 return $this->response->setStatusCode(ResponseInterface::HTTP_INTERNAL_SERVER_ERROR)
-//                                      ->setJSON(['error' => 'Erro ao salvar os valores.']);
-//             }
-//         } catch (\Exception $e) {
-//             log_message('error', $e->getMessage());
-//             return $this->response->setStatusCode(ResponseInterface::HTTP_INTERNAL_SERVER_ERROR)
-//                                  ->setJSON(['error' => 'Erro ao salvar os valores.']);
-//         }
-//     }
-// }
 

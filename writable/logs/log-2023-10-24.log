@@ -1,0 +1,89 @@
+INFO - 2023-10-24 14:11:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-24 14:11:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-10-24 14:14:50 --> Error connecting to the database: mysqli_sql_exception: Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente in C:\xampp\htdocs\TCC2Copia\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\TCC2Copia\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'tcc', 3306, '', 0)
+#1 C:\xampp\htdocs\TCC2Copia\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\TCC2Copia\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\TCC2Copia\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\TCC2Copia\app\Controllers\AuthController.php(40): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\TCC2Copia\app\Controllers\AuthController.php(18): App\Controllers\AuthController->verificarCredenciais('luan', 'ss')
+#6 C:\xampp\htdocs\TCC2Copia\system\CodeIgniter.php(915): App\Controllers\AuthController->autenticar()
+#7 C:\xampp\htdocs\TCC2Copia\system\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#8 C:\xampp\htdocs\TCC2Copia\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\TCC2Copia\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente in C:\xampp\htdocs\TCC2Copia\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\TCC2Copia\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\TCC2Copia\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\TCC2Copia\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\TCC2Copia\app\Controllers\AuthController.php(40): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\TCC2Copia\app\Controllers\AuthController.php(18): App\Controllers\AuthController->verificarCredenciais('luan', 'ss')
+#5 C:\xampp\htdocs\TCC2Copia\system\CodeIgniter.php(915): App\Controllers\AuthController->autenticar()
+#6 C:\xampp\htdocs\TCC2Copia\system\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#7 C:\xampp\htdocs\TCC2Copia\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\TCC2Copia\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-10-24 14:14:50 --> Unable to connect to the database.
+Main connection [MySQLi]: Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuarios`
+WHERE `username` = :username:', [...], false)
+ 3 APPPATH\Controllers\AuthController.php(40): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH\Controllers\AuthController.php(18): App\Controllers\AuthController->verificarCredenciais('luan', 'ss')
+ 5 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\AuthController->autenticar()
+ 6 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-10-24 14:14:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-24 14:14:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-24 14:52:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-24 14:52:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-24 14:56:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-24 14:56:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-10-24 15:03:12 --> Invalid file: "cadastro_usuario.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('cadastro_usuario.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('cadastro_usuario', [], true)
+ 3 APPPATH\Controllers\CadastroUsuario.php(9): view('cadastro_usuario')
+ 4 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\CadastroUsuario->index()
+ 5 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CadastroUsuario))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-24 15:03:12 --> Invalid file: "cadastro_usuario.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('cadastro_usuario.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('cadastro_usuario', [], true)
+ 3 APPPATH\Controllers\CadastroUsuario.php(9): view('cadastro_usuario')
+ 4 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\CadastroUsuario->index()
+ 5 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CadastroUsuario))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-24 15:03:18 --> Invalid file: "cadastro_usuario.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('cadastro_usuario.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('cadastro_usuario', [], true)
+ 3 APPPATH\Controllers\CadastroUsuario.php(9): view('cadastro_usuario')
+ 4 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\CadastroUsuario->index()
+ 5 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CadastroUsuario))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-10-24 15:03:18 --> Invalid file: "cadastro_usuario.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('cadastro_usuario.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('cadastro_usuario', [], true)
+ 3 APPPATH\Controllers\CadastroUsuario.php(9): view('cadastro_usuario')
+ 4 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\CadastroUsuario->index()
+ 5 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CadastroUsuario))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-10-24 15:04:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-24 15:04:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-24 15:05:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-24 15:05:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-24 15:05:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-24 15:05:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

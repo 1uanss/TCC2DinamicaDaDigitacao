@@ -2,6 +2,8 @@ const input = document.getElementById('input-value');
 const botao = document.getElementById('salvar');
 
 
+let arraySobreTempoPresionadoDasTeclas = [];
+let arrayEntreTempoDasTeclas = [];
 const teclasPressionadas = [];
 const indexLetras = {};
 let totalLetrasApertadas = 0;
@@ -30,16 +32,22 @@ window.onload = function(){
     botao.addEventListener('click',(e)=>{
         e.preventDefault()
         compara()
+        document.querySelector('#inputSobreTempoPresionadoDasTeclas').value = `${arraySobreTempoPresionadoDasTeclas.toString()}`;
+        document.querySelector('#inputEntreTempoDasTeclas').value = `${arrayEntreTempoDasTeclas.toString()}`;
+        console.log(document.querySelector('#inputEntreTempoDasTeclas').value)
+        console.log(document.querySelector('#inputSobreTempoPresionadoDasTeclas').value)
     });
+    
 }
 
 function compara(){
     console.log(teclasPressionadas)
     
     teclasPressionadas.forEach((element, idx) => {
-        // if(idx+1 === teclasPressionadas.length) return;
         const apertouAtual = element.apertou;
         const soltouAtual = element.soltou;
+
+
 
 
         let nextElement;
@@ -48,19 +56,24 @@ function compara(){
         let tempoPressionando;
         let tempoEntreTeclas;
         
+        
         if(idx+1 < teclasPressionadas.length) {
              nextElement = teclasPressionadas[idx+1]
              apertouProximo = nextElement.apertou;
              soltouProximo = nextElement.soltou;
              tempoEntreTeclas = apertouProximo - soltouAtual;
+             arrayEntreTempoDasTeclas.push(tempoEntreTeclas);
             }
         tempoPressionando = soltouAtual - apertouAtual;
-
-        // const tempoNegativo = apertouProximo - soltouAtual;
+        arraySobreTempoPresionadoDasTeclas.push(tempoPressionando);
         
-        console.log(element.letra,{tempoPressionando, tempoEntreTeclas});
+        // console.log(element.letra,{tempoPressionando, tempoEntreTeclas});
+
+        // console.log(arraySobreTempoPresionadoDasTeclas);
+        // console.log(arrayEntreTempoDasTeclas);
     });
 
     const senha = (teclasPressionadas.map((elm)=>elm.letra)).join('')
-    console.log({senha})
+    // console.log({senha})
+    
 }
