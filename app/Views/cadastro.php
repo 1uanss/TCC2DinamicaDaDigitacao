@@ -20,12 +20,25 @@
 <body>
     <div class="container">
        
-        <form id="form" action="" method="POST">
+        <form id="form" action="<?= base_url('/novo/usuario')?>" method="POST">
+        <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
             <div class="form-header">
                 <div class="title">
                     <h1>Cadastre-se</h1>
                 </div>
             </div>
+            <?php
+            if (session()->getFlashdata('status') === "okay") {
+            echo '<div class="alert alert-success" role="alert">
+                        Usuário cadastro!
+                    </div>';
+        };
+        if (session()->getFlashdata('status') === "error") {
+            echo '<div class="alert alert-warning" role="alert">
+                        Usuário não cadastro!
+                    </div>';
+        };
+        ?>
             <div class="field-group">
                 <div class=" data-field">
                     <label for="username">Seu nome</label>
@@ -51,6 +64,15 @@
             </div>
         </form>
     </div>
+    <script>
+        setTimeout(function() {
+        let divToRemove = document.querySelector('.alert');
+        if (divToRemove) {
+            divToRemove.remove();
+        }
+    }, 3000);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 
 </html>

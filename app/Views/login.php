@@ -25,6 +25,7 @@
     
         <div class="container-child">
             <form method="POST" action="<?= base_url("/autenticar") ?>">
+            <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
                 <div class="form-header">
                     <div class="title">
                         <h1>Conecte-se</h1>

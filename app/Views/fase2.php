@@ -34,6 +34,7 @@
         <div class="form-box">
             <div class="form-value">
                 <form id="form">
+                <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
                     <h2>Informe os dados</h2>
                     <div class="inputbox">
                         <ion-icon name="mail-outline"></ion-icon>

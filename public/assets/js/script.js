@@ -34,8 +34,8 @@ window.onload = function(){
         compara()
         document.querySelector('#inputSobreTempoPresionadoDasTeclas').value = `${arraySobreTempoPresionadoDasTeclas.toString()}`;
         document.querySelector('#inputEntreTempoDasTeclas').value = `${arrayEntreTempoDasTeclas.toString()}`;
-        // console.log(document.querySelector('#inputEntreTempoDasTeclas').value)
-        // console.log(document.querySelector('#inputSobreTempoPresionadoDasTeclas').value)
+        console.log(document.querySelector('#inputEntreTempoDasTeclas').value)
+        console.log(document.querySelector('#inputSobreTempoPresionadoDasTeclas').value)
     });
     
 }
