@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="<?= base_url('assets/css/style.css'); ?>">
     <style>
         section {
-            background-image: url('<?= base_url('/img/one.jpg') ?>');
+            background-color: #dfc0a1;
             display: flex;
             flex-direction: column;
         }
@@ -44,7 +44,7 @@
                     <div class="inputbox">
                         <ion-icon name="lock-closed-outline"></ion-icon>
                         <label for="password">Passaword</label>
-                        <input type="password" id="input-value" name="password" required>
+                        <input type="password" id="input-value" name="senha" required>
                     </div>
 
                     <div class="inputbox" style="display: none;">

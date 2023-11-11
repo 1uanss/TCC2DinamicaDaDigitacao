@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="<?= base_url('assets/css/style.css'); ?>">
     <style>
         section {
-            background-image: url('<?= base_url('/img/banner.jpg') ?>');
+            background-color: #dfc0a1;
             display: flex;
             flex-direction: column;
         }

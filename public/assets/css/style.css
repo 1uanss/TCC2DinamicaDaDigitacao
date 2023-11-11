@@ -7,7 +7,7 @@
 }
 
 header {
-    background-color: transparent;
+    background-color: black;
     color: #fff;
     height: 50px;
     display: flex;
@@ -138,7 +138,7 @@ button{
 
 #progress-bar {
     width: 100%;
-    background-color: #ccc;
+    background-color: black;
     height: 30px;
     margin-bottom: 20px;
 }

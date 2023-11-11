@@ -11,7 +11,7 @@
 </head>
 <style>
     body {
-    background-image: url('<?= base_url('/img/banner.jpg') ?>');
+    background-image: url('<?= base_url('/img/texture.jpg') ?>');
     display: flex;
     flex-direction: column;
     }

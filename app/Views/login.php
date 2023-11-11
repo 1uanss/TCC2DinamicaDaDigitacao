@@ -15,7 +15,7 @@
 <style>
 
     body {
-        background-image: url('<?= base_url('/img/one.jpg') ?>');
+        background-image: url('<?= base_url('/img/papel.jpg') ?>');
         display: flex;
         flex-direction: column;
     }
