@@ -40,4 +40,10 @@ class UsuariosModel extends Model{
         }
     }
 
+    public function getUsers($email,$senha){
+        $dataBase = \Config\Database::connect();
+        $query = "SELECT * FROM users WHERE id = (SELECT id WHERE useremail = '$email' AND userpassword = '$senha')";
+        return $dataBase->query($query)->getResultArray();
+    }
+
 }

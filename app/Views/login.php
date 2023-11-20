@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?= base_url("/style.css") ?>">
-
     <link rel="stylesheet" href="<?= base_url("assets/login/css/login.css")?>">
     
     <title>Login</title>
@@ -44,7 +43,7 @@
                 </div>
                 <div class="confirm-button">
                     <a id="btn-cadastrar" href="<?= base_url("/cadastrar/usuario") ?>"><button type="button" class="btn btn-warning bttwo">Criar conta</button></a>
-                    <button type="submit" class="btn btn-warning bttwo"  href="<?= base_url("/index") ?>">Entrar</button>
+                    <button type="submit" class="btn btn-warning bttwo">Entrar</button>
                 </div>
             </form>
         </div>

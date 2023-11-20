@@ -107,7 +107,7 @@ body{
 
 .bttwo:hover{
     background-color: var(--color-amarelo-500);
-    transition: all 1s;
+    /* transition: all 1s; */
     color: white;
 }
 

@@ -18,3 +18,6 @@ $routes->get('/cadastrar/usuario', 'CadastroUsuario::index');
 $routes->post('/novo/usuario', 'CadastroUsuario::novoUsuario');
 
 
+$routes->post('/autenticar', 'Login::login');
+
+

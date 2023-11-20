@@ -82,6 +82,11 @@
             console.log("fu");
         });
 
+        salvarButton.addEventListener("click", function() {
+      // Limpe os campos de nome e senha
+      document.getElementById("input-nome").value = "";
+      document.getElementById("input-value").value = "";
+        });
 
         salvarButton.addEventListener("click", () => {
             cadastros++;
