@@ -32,8 +32,8 @@
                 </div>
                 <div class="input-group grupo-inputs">
                     <div class="input-campo">
-                        <label for="email">Usuário</label>
-                        <input id="email" type="text" name="username" placeholder="Username" required>
+                        <label for="email">Email</label>
+                        <input id="email" type="text" name="username" placeholder="Email" required>
                     </div>
                     <div class="input-campo">
                         <label for="password">Senha</label>

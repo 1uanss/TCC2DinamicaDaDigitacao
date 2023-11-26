@@ -14,4 +14,14 @@ class Fase1 extends BaseController
         return view('fase1');
     }
 
+    public function processValues(){
+
+        $usuarioLegitimo = $_POST['usuarioLegitimo'];
+        $usuarioImpostor = $_POST['usuarioImpostor'];
+
+        echo "<pre>";
+        var_dump($usuarioLegitimo);
+        echo "</pre>";
+    }
+
 }

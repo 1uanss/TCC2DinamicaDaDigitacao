@@ -2,11 +2,21 @@ const input = document.getElementById('input-value');
 const botao = document.getElementById('salvar');
 
 
+
 let arraySobreTempoPresionadoDasTeclas = [];
 let arrayEntreTempoDasTeclas = [];
-const teclasPressionadas = [];
-const indexLetras = {};
+let teclasPressionadas = [];
+let indexLetras = {};
 let totalLetrasApertadas = 0;
+let resultados = {
+    "legitimo": [],
+    "impostor": [],
+};
+let contadorLegitimo = 0;
+let contadorImpostor = 0;
+let totalDigitacaoLegitimo = 30;
+let totalDigitacaoImpostor = 30;
+let quemDigita = "legitimo";
 
 function aperta(letra){
     teclasPressionadas.push({letra, apertou: Date.now()});
@@ -21,7 +31,7 @@ function solta(letra){
 
 window.onload = function(){
     input.addEventListener('keydown',e=>{
-        console.log('press', e.key);
+        
         aperta(e.key);
     })
     
@@ -30,18 +40,95 @@ window.onload = function(){
     })
     
     botao.addEventListener('click',(e)=>{
+        if(contadorLegitimo < totalDigitacaoLegitimo){
+            contadorLegitimo += 1;
+        } else if(contadorLegitimo == totalDigitacaoLegitimo){
+            quemDigita = "impostor";
+        }
+
+        if(quemDigita == "impostor" && contadorImpostor < totalDigitacaoImpostor){ 
+            contadorImpostor += 1;
+        }
+
         e.preventDefault()
         compara()
         document.querySelector('#inputSobreTempoPresionadoDasTeclas').value = `${arraySobreTempoPresionadoDasTeclas.toString()}`;
         document.querySelector('#inputEntreTempoDasTeclas').value = `${arrayEntreTempoDasTeclas.toString()}`;
-        console.log(document.querySelector('#inputEntreTempoDasTeclas').value)
-        console.log(document.querySelector('#inputSobreTempoPresionadoDasTeclas').value)
+
+        limparTempos();
+        if(contadorImpostor == totalDigitacaoImpostor){
+            // enviar dados para servido
+            const dados = enviaDados();
+            const formData = new FormData()
+            formData.append('usuarioLegitimo',dados[0]);
+            formData.append('usuarioImpostor',dados[1]);
+
+            const xhr = new XMLHttpRequest 
+            const baseURL = document.URL.split("/public/")[0] + "/public";
+            console.log(dados)
+            xhr.open('POST',baseURL+'/fase1/enviadados',true);
+            xhr.send(formData);
+            xhr.onload =  function(){
+                if(xhr.status >= 200 && xhr.status < 300){
+                    document.body.innerHTML+= xhr.responseText;
+                }
+            }
+        }
     });
     
 }
 
+function limparTempos(){
+    resultados[quemDigita].push({
+        arraySobreTempoPresionadoDasTeclas,
+        arrayEntreTempoDasTeclas,
+        teclasPressionadas,
+        indexLetras,
+        totalLetrasApertadas,
+    });
+   
+
+    arraySobreTempoPresionadoDasTeclas = [];
+    arrayEntreTempoDasTeclas = [];
+    teclasPressionadas = [];
+    indexLetras = {};
+    totalLetrasApertadas = 0;
+}
+
+function enviaDados(){
+    const dadosLegitimos = resultados.legitimo.reduce((agg,curent,idx)=>{
+       const tempoPresinando = curent.arraySobreTempoPresionadoDasTeclas;
+       const tempoEntreTeclas = curent.arrayEntreTempoDasTeclas;
+       const resultLegitimo = []
+        tempoPresinando.forEach((val,validx)=>{
+        resultLegitimo.push(val)
+        if(validx < tempoEntreTeclas.length){
+            const posicaoAtual = resultLegitimo.length
+            resultLegitimo.splice(posicaoAtual, 0, tempoEntreTeclas[validx])
+        }
+       })
+       return [...agg,resultLegitimo]
+    },[]);
+
+    const dadosImpostor = resultados.impostor.reduce((agg,curent,idx)=>{
+        const tempoPresinando = curent.arraySobreTempoPresionadoDasTeclas;
+        const tempoEntreTeclas = curent.arrayEntreTempoDasTeclas;
+        const resultImpostor = []
+         tempoPresinando.forEach((val,validx)=>{
+         resultImpostor.push(val)
+         if(validx < tempoEntreTeclas.length){
+             const posicaoAtual = resultImpostor.length
+             resultImpostor.splice(posicaoAtual, 0, tempoEntreTeclas[validx])
+         }
+        })
+        return [...agg,resultImpostor]
+
+     },[]);
+     return[dadosLegitimos,dadosImpostor];
+}
+
 function compara(){
-    console.log(teclasPressionadas)
+   
     
     teclasPressionadas.forEach((element, idx) => {
         const apertouAtual = element.apertou;
@@ -67,13 +154,15 @@ function compara(){
         tempoPressionando = soltouAtual - apertouAtual;
         arraySobreTempoPresionadoDasTeclas.push(tempoPressionando);
         
-        console.log(element.letra,{tempoPressionando, tempoEntreTeclas});
+       
+        return  {tempoPressionando, tempoEntreTeclas};
 
-        // console.log(arraySobreTempoPresionadoDasTeclas);
-        // console.log(arrayEntreTempoDasTeclas);
+       
     });
 
+
+
     const senha = (teclasPressionadas.map((elm)=>elm.letra)).join('')
-    // console.log({senha})
+    
     
 }

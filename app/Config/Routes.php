@@ -20,4 +20,5 @@ $routes->post('/novo/usuario', 'CadastroUsuario::novoUsuario');
 
 $routes->post('/autenticar', 'Login::login');
 
+$routes->post('/fase1/enviadados','Fase1::processValues');
 

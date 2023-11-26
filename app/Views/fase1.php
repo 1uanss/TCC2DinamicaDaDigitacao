@@ -13,19 +13,23 @@
             display: flex;
             flex-direction: column;
         }
+        
     </style>
 </head>
 
 <body>
    
     <section class="container">
+    
     <header>
         <nav>
             <ul>
                 <li><a href="<?= base_url("/fase1") ?>">Fase 1</a></li>
                 <li><a  href="<?= base_url("/fase2") ?>">Fase 2</a></li>
+                <li><a  href="<?= base_url("#") ?>">Exportar</a></li>
             </ul>
         </nav>
+        
     </header>
         <p class="informacao">
             Bem vindo a fase 1 do projeto sobre a dinamica da digitação, ao digitar seu nome e senha trinta vezes
@@ -55,6 +59,7 @@
                 </form>
             </div>
         </div>
+        <div id="mensagem-troca" class="troca-mensagem" style="display: none;"></div>
         <div class="card">
             <div id="progress-bar">
                 <div id="progress">0%</div>
@@ -62,6 +67,7 @@
         </div>
 
         </div>
+       
     </section>
     <!-- <button id='mostrar_array'>Mostrar Array</button> -->
     <script>
@@ -69,6 +75,7 @@
         const salvarButton = document.getElementById("salvar");
         const cadastroForm = document.getElementById("form");
 
+        
         let cadastros = 0;
         const form = document.getElementById('form');
 

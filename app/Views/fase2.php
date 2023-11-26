@@ -24,6 +24,7 @@
             <ul>
                 <li><a href="<?= base_url("/fase1") ?>">Fase 1</a></li>
                 <li><a  href="<?= base_url("/fase2") ?>">Fase 2</a></li>
+                <li><a  href="<?= base_url("#") ?>">Exportar</a></li>
             </ul>
         </nav>
     </header>
@@ -31,6 +32,10 @@
         Tente acessar o seu próprio login duas vezes.
         Além disso, tente acessar o login de outros usuários duas vezes.
         </p>
+        <div class="login-info">
+            <h3>Informações de Login:</h3>
+         <p id="login-info"></p>
+</div>
         <div class="form-box">
             <div class="form-value">
                 <form id="form">
@@ -63,6 +68,7 @@
         const progressBar = document.getElementById("progress");
         const salvarButton = document.getElementById("salvar");
         const cadastroForm = document.getElementById("form");
+        const loginInfo = document.getElementById("login-info");
 
         let cadastros = 0;
         const form = document.getElementById('form');
@@ -84,6 +90,10 @@
                 const progressPercentage = (cadastros / 30) * 100;
                 progressBar.style.width = `${progressPercentage}%`;
                 progressBar.textContent = `${progressPercentage.toFixed(2)}%`;
+
+                const nome = document.getElementById("input-nome").value;
+                const password = document.getElementById("input-value").value;
+                loginInfo.textContent = `Nome: ${nome}, Senha: ${password}`;
             } else {
                 alert("Limite de 30 cadastros atingido.");
             }

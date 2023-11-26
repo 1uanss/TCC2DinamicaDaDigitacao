@@ -1,0 +1,41 @@
+INFO - 2023-11-25 16:20:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-25 16:35:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-25 16:35:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-25 17:06:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-25 17:57:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-25 17:57:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-25 17:57:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-25 18:01:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-25 20:04:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-25 20:05:52 --> Undefined property: App\Controllers\Fase1::$output
+in APPPATH\Controllers\Fase1.php on line 22.
+ 1 APPPATH\Controllers\Fase1.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Fase1::$output', 'C:\\laragon\\www\\TCC2teste\\app\\Controllers\\Fase1.php', 22)
+ 2 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Fase1->processValues()
+ 3 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Fase1))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-25 20:07:26 --> syntax error, unexpected token "}", expecting "," or ";"
+in APPPATH\Controllers\Fase1.php on line 23.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\laragon\\www\\TCC2teste\\app\\Controllers\\Fase1.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Fase1')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Fase1')
+ 4 SYSTEMPATH\CodeIgniter.php(873): class_exists('\\App\\Controllers\\Fase1', true)
+ 5 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-25 20:08:05 --> Undefined array key "usuarioLegitimo"
+in APPPATH\Controllers\Fase1.php on line 19.
+ 1 APPPATH\Controllers\Fase1.php(19): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuarioLegitimo"', 'C:\\laragon\\www\\TCC2teste\\app\\Controllers\\Fase1.php', 19)
+ 2 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Fase1->processValues()
+ 3 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Fase1))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-25 20:09:55 --> Array to string conversion
+in APPPATH\Controllers\Fase1.php on line 23.
+ 1 APPPATH\Controllers\Fase1.php(23): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\laragon\\www\\TCC2teste\\app\\Controllers\\Fase1.php', 23)
+ 2 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\Fase1->processValues()
+ 3 SYSTEMPATH\CodeIgniter.php(492): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Fase1))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-25 21:21:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-25 21:22:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
